@@ -1,0 +1,28 @@
+<h1><%= @book.name %></h1>
+<%= link_to "<-- to books", books_path, method: :get %>
+<br/>
+<br/>
+
+<h2>Book's authors:</h2>
+<% @book.authors.each do |a| %>
+  <p><%= a.name %></p>
+<% end %>
+
+<table>
+
+  <tr>
+    <th>ID</th>
+    <th width = 200>Author Name</th>
+    <th></th>
+  </tr>
+
+<h2>choose author to add</h2>
+
+<% Author.all.each do |a| %>
+
+  <tr>
+    <td align = center><%= link_to a.name, controller: "books", :action => "add_author", :id => @book, :author_id => a  %></td>
+  </tr>
+<% end %>
+</table>
+  

@@ -1,0 +1,8 @@
+<h1>Edit book</h1>
+
+<%= form_for @book do |f| %>
+
+  <p>Enter new book name: </br><%= f.text_field :name %></p>
+  <p><%= f.submit "Update" %></p>
+
+<% end %>

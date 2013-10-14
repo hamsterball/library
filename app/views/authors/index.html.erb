@@ -1,0 +1,31 @@
+<h1>Authors</h1>
+<%= link_to "<-- to books", books_path, method: :get %>
+<br/>
+<br/>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th width = 200>Author Name</th>
+    <th></th>
+  </tr>
+
+<% @authors.each do |a| %>
+
+
+  <tr>
+    <td><%= link_to a.id, author_path(a) %> </td>
+    <td align = center><%= link_to a.name, author_path(a) %></td>
+    <td><%= button_to "Edit", edit_author_path(a), method: :get %></td>
+    <td><%= button_to "Delete", a, method: :delete, data: { confirm: "Are you sure?"} %></td>
+  </tr>
+
+  
+<% end %>
+
+
+</table>
+
+<br/>
+<br/>
+<%= button_to "Add new author", new_author_path, method: :get %>

@@ -1,0 +1,8 @@
+<h1>Create new author</h1>
+
+<%= form_for @author do |f| %>
+
+  <p>Enter name: </br><%= f.text_field :name %></p>
+  <p><%= f.submit "Add author" %></p>
+
+<% end %>

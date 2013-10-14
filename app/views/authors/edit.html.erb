@@ -1,0 +1,9 @@
+<h1>Edit author</h1>
+
+
+<%= @books do |b| %>
+      <p>
+        <%= link_to 'Edit', add_book_authors_path(b) %>
+      </p>  
+  
+<% end %>
