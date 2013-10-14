@@ -14,10 +14,10 @@
 
 
   <tr>
-    <td><%= link_to a.id, book_path(a) %> </td>
+    <td><%= a.id %> </td>
     <td align = center><%= link_to a.name, book_path(a) %></td>
-    <td><%= button_to "Edit", edit_book_path(a), method: :get %></td>
-    <td><%= button_to "Delete", a, method: :delete, data: { confirm: "Are you sure?"} %></td>
+    <td><%= link_to "Edit", edit_book_path(a) %></td>
+    <td><%= link_to "Delete", a, method: :delete, data: { confirm: "Are you sure?"} %></td>
   </tr>
 
   

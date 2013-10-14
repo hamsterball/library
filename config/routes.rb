@@ -1,12 +1,7 @@
 Library::Application.routes.draw do
   
-  resources :authors #do
- #   get :add_book, on: :member
- # end
-  
-  resources :books #do
-  #  get :add_author, on: :member
-  #end
+  resources :authors 
+  resources :books 
   
   get 'authors/:id/add_book/:book_id', to: 'authors#add_book'
   get 'books/:id/add_author/:author_id', to: 'books#add_author'

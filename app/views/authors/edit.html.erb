@@ -1,9 +1,8 @@
 <h1>Edit author</h1>
 
+<%= form_for @author do |f| %>
 
-<%= @books do |b| %>
-      <p>
-        <%= link_to 'Edit', add_book_authors_path(b) %>
-      </p>  
-  
+  <p>Enter new author name: </br><%= f.text_field :name %></p>
+  <p><%= f.submit "Update" %></p>
+
 <% end %>

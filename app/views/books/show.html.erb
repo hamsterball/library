@@ -3,11 +3,22 @@
 <br/>
 <br/>
 
-<h2>Book's authors:</h2>
-<% @book.authors.each do |a| %>
-  <p><%= a.name %></p>
-<% end %>
+<table>
+  <tr>
+    <th>ID</th>
+    <th width = 200>Author Name</th>
+    <th></th>
+  </tr>
+<h2>book's authors:</h2>
+<% @book.authors.each do |b| %>
+  <tr>
+  <td><%= b.id %></td>
+  <td align=center><%= b.name %></td>
+  <td><%= link_to 'show', author_path(b) %></td>
+  </tr>
+  <% end %>
 
+</table>
 <table>
 
   <tr>
@@ -18,10 +29,12 @@
 
 <h2>choose author to add</h2>
 
-<% Author.all.each do |a| %>
+<% Author.all.each do |b| %>
 
   <tr>
-    <td align = center><%= link_to a.name, controller: "books", :action => "add_author", :id => @book, :author_id => a  %></td>
+    <td><%= b.id %></td>
+    <td align = center><%=  b.name %></td>
+    <td align = center><%= link_to "add",controller: "books", :action => "add_author", :id => @book, :author_id => b %></td>
   </tr>
 <% end %>
 </table>
